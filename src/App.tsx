@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite 12 + React23</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+export const App = () =>{
+    const news = [
+        {nick:"cool-news-1",name:"news 1",description:"Description news 1"},
+        {nick:"cool-news-2",name:"news 2",description:"Description news 2"},
+        {nick:"cool-news-3",name:"news 3",description:"Description news 3"},
+        {nick:"cool-news-4",name:"news 4",description:"Description news 4"},
+        {nick:"cool-news-5",name:"news 5",description:"Description news 5"},
+    ]
+    return ( 
+    <div>
+       <h1>Pioner News</h1>
+       {news.map((newItem)=>{
+        return(
+             <div key={newItem.nick}>
+        <h2>
+            {newItem.name}
+        </h2>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+            {newItem.description}
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+       </div>
+        );
+       })}
+       
+      
+    </div>  
+    )
 }
-
-export default App
